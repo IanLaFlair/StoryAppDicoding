@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyStoryApps</string>
+    <string name="bagikan_cerita_menarik_nkamu_disini">Bagikan cerita menarik\nkamu disini</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_writer_nsilakan_login_untuk_melanjutkan">Welcome Writer\nSilakan Login untuk melanjutkan</string>
+    <string name="email_gmail_com">Email@gmail.com</string>
 </resources>
