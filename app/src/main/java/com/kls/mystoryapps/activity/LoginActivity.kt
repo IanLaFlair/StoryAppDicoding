@@ -1,14 +1,23 @@
 package com.kls.mystoryapps.activity
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import com.kls.mystoryapps.R
 import com.kls.mystoryapps.databinding.ActivityLoginBinding
 import com.kls.mystoryapps.model.LoginResponse
 import com.kls.mystoryapps.utils.ApiConfig
+import com.kls.mystoryapps.utils.TokenPreference
+import com.kls.mystoryapps.viewmodel.TokenViewModel
+import com.kls.mystoryapps.viewmodel.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,6 +25,8 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "userToken")
+    private lateinit var tokenViewModel: TokenViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +34,20 @@ class LoginActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         showLoading(false)
+
+        val pref = TokenPreference.getInstance(dataStore)
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
+            TokenViewModel::class.java
+        )
+        tokenViewModel.getTokens().observe(this
+        ) { token: String? ->
+            if (token != null){
+                val intent = Intent(this,ListStoryActivity::class.java)
+                intent.putExtra("tokenExtra",token)
+                startActivity(intent)
+            }
+        }
+
         binding.btnSubmitLogin.setOnClickListener {
             showLoading(true)
             loginTask(binding.edtEmail.text.toString(),binding.edtPassword.text.toString())
@@ -38,7 +63,11 @@ class LoginActivity : AppCompatActivity() {
             ) {
                 showLoading(false)
                 if (response.isSuccessful) {
-                    showToast(response.body()?.message.toString())
+                    val token = response.body()?.loginResult?.token.toString()
+                    tokenViewModel.saveTokens(token)
+
+                    val intent = Intent(this@LoginActivity,ListStoryActivity::class.java)
+                    startActivity(intent)
                 } else {
                     showToast(response.message())
                 }

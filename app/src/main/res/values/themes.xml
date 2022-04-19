@@ -32,4 +32,10 @@
         <item name="android:textColor">@color/textHeadline</item>
     </style>
 
+    <style name="textBold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textHeadline</item>
+    </style>
+
 </resources>

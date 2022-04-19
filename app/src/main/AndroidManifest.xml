@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kls.mystoryapps">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStoryApps">
         <activity
-            android:name=".activity.AuthActivity"
-            android:exported="true" >
-
-        </activity>
+            android:name=".activity.ListStoryActivity"
+            android:exported="false" />
         <activity
-            android:name=".activity.LoginActivity"
-            android:exported="true" >
+            android:name=".activity.RegisterActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".activity.AuthActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +27,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
