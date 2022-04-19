@@ -3,7 +3,9 @@
     package="com.kls.mystoryapps">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,11 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStoryApps">
         <activity
+            android:name=".activity.AddStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DetailStoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ListStoryActivity"
             android:exported="false" />
         <activity
             android:name=".activity.RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activity.AuthActivity"
             android:exported="true">
@@ -28,7 +36,7 @@
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

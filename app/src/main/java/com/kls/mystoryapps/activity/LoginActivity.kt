@@ -2,16 +2,15 @@ package com.kls.mystoryapps.activity
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.kls.mystoryapps.R
 import com.kls.mystoryapps.databinding.ActivityLoginBinding
 import com.kls.mystoryapps.model.LoginResponse
 import com.kls.mystoryapps.utils.ApiConfig
@@ -36,18 +35,7 @@ class LoginActivity : AppCompatActivity() {
         showLoading(false)
 
         val pref = TokenPreference.getInstance(dataStore)
-        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
-            TokenViewModel::class.java
-        )
-        tokenViewModel.getTokens().observe(this
-        ) { token: String? ->
-            if (token != null){
-                val intent = Intent(this,ListStoryActivity::class.java)
-                intent.putExtra("tokenExtra",token)
-                startActivity(intent)
-            }
-        }
-
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
         binding.btnSubmitLogin.setOnClickListener {
             showLoading(true)
             loginTask(binding.edtEmail.text.toString(),binding.edtPassword.text.toString())
@@ -65,9 +53,9 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val token = response.body()?.loginResult?.token.toString()
                     tokenViewModel.saveTokens(token)
-
                     val intent = Intent(this@LoginActivity,ListStoryActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
                     showToast(response.message())
                 }

@@ -7,4 +7,19 @@
     <string name="email_gmail_com">Email@gmail.com</string>
     <string name="nama">Nama</string>
     <string name="register">REGISTER</string>
+    <string name="lorem">lorem</string>
+    <string name="loremipsum_dolor_sitamet">loremipsum dolor sitamet</string>
+    <string name="tambahkan_cerita">Tambahkan Cerita</string>
+    <string name="logout">Logout</string>
+    <string name="my_story">My Story</string>
+    <string name="ceritakan_pengalaman_menarik_kamu">Ceritakan pengalaman menarik kamu</string>
+    <string name="klik_di_atas_untuk_mengupload_gambar">Klik di atas untuk mengupload gambar</string>
+    <string name="image_thumbnail">image thumbnail</string>
+    <string name="image_user">image user</string>
+    <string name="image_header">image header</string>
+    <string name="image_bottom">image bottom</string>
+    <string name="image_author">image author</string>
+    <string name="submit">Submit</string>
+    <string name="password">Password</string>
+    <string name="sample_name">Ian Rachman Dana</string>
 </resources>

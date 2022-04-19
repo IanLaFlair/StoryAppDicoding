@@ -3,7 +3,6 @@ package com.kls.mystoryapps.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kls.mystoryapps.model.LoginResponse
 import com.kls.mystoryapps.model.StoryModel
 import com.kls.mystoryapps.model.StoryResponse
 import com.kls.mystoryapps.utils.ApiConfig
@@ -18,7 +17,7 @@ class StoryViewModel(): ViewModel() {
 
     fun setListStory(token: String){
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getStoryTask("Bearer "+token)
+        val client = ApiConfig.getApiService().getStoryTask("Bearer $token")
         client.enqueue(object: Callback<StoryResponse> {
             override fun onResponse(call: Call<StoryResponse>, response: Response<StoryResponse>) {
                 _isLoading.value = false

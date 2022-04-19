@@ -1,14 +1,11 @@
 package com.kls.mystoryapps.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.kls.mystoryapps.R
-import com.kls.mystoryapps.databinding.ActivityLoginBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.kls.mystoryapps.databinding.ActivityRegisterBinding
-import com.kls.mystoryapps.model.LoginResponse
 import com.kls.mystoryapps.model.RegisterResponse
 import com.kls.mystoryapps.utils.ApiConfig
 import retrofit2.Call
@@ -40,7 +37,8 @@ class RegisterActivity : AppCompatActivity() {
             ) {
                 showLoading(false)
                 if (response.isSuccessful) {
-                    showToast(response.body()?.message.toString())
+                    showToast(response.body()?.message.toString() + " Silakan Login")
+                    finish()
                 } else {
                     showToast(response.message())
                 }

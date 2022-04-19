@@ -17,4 +17,11 @@ class TokenViewModel (private val pref: TokenPreference) : ViewModel() {
             pref.saveToken(token)
         }
     }
+
+    fun removeTokens() {
+        viewModelScope.launch {
+            pref.removeToken()
+        }
+    }
+
 }

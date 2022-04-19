@@ -23,6 +23,12 @@ class TokenPreference private constructor(private val dataStore: DataStore<Prefe
         }
     }
 
+    suspend fun removeToken() {
+        dataStore.edit {
+            it.clear()
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: TokenPreference? = null

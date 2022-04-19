@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mystory" />
+        app:srcCompat="@drawable/mystory"
+        android:contentDescription="@string/image_header" />
 
     <TextView
         android:id="@+id/textView"
@@ -70,6 +71,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bg_bot" />
+        app:srcCompat="@drawable/bg_bot"
+        android:contentDescription="@string/image_bottom" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

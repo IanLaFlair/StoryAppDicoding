@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.kls.mystoryapps.utils.CustomEditText
+    <EditText
         android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_marginStart="24dp"
@@ -48,9 +48,10 @@
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawablePadding="16dp"
         android:fontFamily="@font/poppins_semibold"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:textColor="@color/textHeadline"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +64,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="LOGIN"
+        android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="@+id/edt_password"
         app:layout_constraintStart_toStartOf="@+id/edt_password"
         app:layout_constraintTop_toBottomOf="@+id/edt_password" />
@@ -75,7 +76,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_submit_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit_login"
+        app:layout_constraintVertical_bias="0.093" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

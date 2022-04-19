@@ -11,12 +11,15 @@
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1315" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.207" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.1315" />
+        <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_add_story.xml" value="0.2406392694063927" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_auth.xml" value="0.2" />
+        <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_detail_story.xml" value="0.2439814814814815" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_list_story.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/layout/item_story.xml" value="0.2" />
+        <entry key="..\:/Users/Ian/AndroidStudioProjects/MyStoryApps/app/src/main/res/menu/option_menu.xml" value="0.2406392694063927" />
       </map>
     </option>
   </component>
